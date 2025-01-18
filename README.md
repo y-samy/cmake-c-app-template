@@ -10,4 +10,4 @@ that most developers may find useful, for example:
 - GitHub workflows
 - CMakePresets.json, with a unified output folder for all IDEs
 - Descriptive executable names, can be tweaked to be ready for shipping
-- 
+- Support for the three major compilers and their various configurations (GCC, Clang, MSVC-CL)

@@ -1,0 +1,4 @@
+FROM docker.io/library/ubuntu:24.04 AS base
+
+RUN apt-get update && apt-get install -y --no-install-recommends\
+    cppcheck valgrind ccache cmake clangd wget git lsb-release zlib1g-dev

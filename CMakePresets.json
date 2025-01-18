@@ -1,0 +1,226 @@
+{
+    "version": 3,
+    "configurePresets": [
+      {
+        "name": "windows-msvc",
+        "description": "Target Windows with the Visual Studio development environment.",
+        "hidden": true,
+        "generator": "Ninja",
+        "binaryDir": "${sourceDir}/out/build/${presetName}",
+        "installDir": "${sourceDir}/out/install/${presetName}",
+        "cacheVariables": {
+          "CMAKE_C_COMPILER": "cl.exe"
+        },
+        "condition": {
+          "type": "equals",
+          "lhs": "${hostSystemName}",
+          "rhs": "Windows"
+        }
+      },
+      {
+        "name": "windows-mingw",
+        "description": "Target Windows with the Minimal GNU for Windows toolset.",
+        "hidden": true,
+        "generator": "Ninja",
+        "binaryDir": "${sourceDir}/out/build/${presetName}",
+        "installDir": "${sourceDir}/out/install/${presetName}",
+        "cacheVariables": {
+          "CMAKE_C_COMPILER": "gcc.exe"
+        },
+        "condition": {
+          "type": "equals",
+          "lhs": "${hostSystemName}",
+          "rhs": "Windows"
+        }
+      },
+      {
+        "name": "linux",
+        "description": "Target Linux with GLibc.",
+        "hidden": true,
+        "generator": "Ninja",
+        "binaryDir": "${sourceDir}/out/build/${presetName}",
+        "installDir": "${sourceDir}/out/install/${presetName}",
+        "cacheVariables": {
+          "CMAKE_C_COMPILER": "gcc"
+        },
+        "condition": {
+          "type": "equals",
+          "lhs": "${hostSystemName}",
+          "rhs": "Linux"
+        }
+      },
+      {
+        "name": "x64-debug-msvc",
+        "displayName": "x64 Debug MSVC",
+        "description": "Target Windows (64-bit) with the Visual Studio development environment. (Debug)",
+        "inherits": "windows-msvc",
+        "architecture": {
+          "value": "x64",
+          "strategy": "external"
+        },
+        "cacheVariables": {
+          "CMAKE_BUILD_TYPE": "Debug",
+          "RELEASE_TYPE": "x64_debug_MSVC"
+        }
+      },
+      {
+        "name": "x64-release-msvc",
+        "displayName": "x64 Release MSVC",
+        "description": "Target Windows (64-bit) with the Visual Studio development environment. (RelWithDebInfo)",
+        "inherits": "x64-debug-msvc",
+        "cacheVariables": {
+          "CMAKE_BUILD_TYPE": "Release",
+          "RELEASE_TYPE": "x64_MSVC"
+        }
+      },
+      {
+        "name": "x86-debug-msvc",
+        "displayName": "x86 Debug MSVC",
+        "description": "Target Windows (32-bit) with the Visual Studio development environment. (Debug)",
+        "inherits": "windows-msvc",
+        "architecture": {
+          "value": "x86",
+          "strategy": "external"
+        },
+        "cacheVariables": {
+          "CMAKE_BUILD_TYPE": "Debug",
+          "RELEASE_TYPE": "x86-debug_MSVC"
+        }
+      },
+      {
+        "name": "x86-release-msvc",
+        "displayName": "x86 Release MSVC",
+        "description": "Target Windows (32-bit) with the Visual Studio development environment. (RelWithDebInfo)",
+        "inherits": "x86-debug-msvc",
+        "cacheVariables": {
+          "CMAKE_BUILD_TYPE": "Release",
+          "RELEASE_TYPE": "x86_MSVC"
+        }
+      },
+      {
+        "name": "x64-debug-clang-msvc",
+        "displayName": "x64 Debug Clang (MSVC)",
+        "inherits": "x64-debug-msvc",
+        "cacheVariables": {
+          "CMAKE_C_COMPILER": "clang-cl.exe"
+        }
+      },
+      {
+        "name": "x64-release-clang-msvc",
+        "displayName": "x64 Release Clang (MSVC)",
+        "inherits": "x64-release-msvc",
+        "cacheVariables": {
+          "CMAKE_C_COMPILER": "clang-cl.exe"
+        }
+      },
+      {
+        "name": "x86-debug-clang-msvc",
+        "displayName": "x86 Debug Clang (MSVC)",
+        "inherits": "x86-debug-msvc",
+        "cacheVariables": {
+          "CMAKE_C_COMPILER": "clang-cl.exe"
+        }
+      },
+      {
+        "name": "x86-release-clang-msvc",
+        "displayName": "x86 Release Clang (MSVC)",
+        "inherits": "x86-release-msvc",
+        "cacheVariables": {
+          "CMAKE_C_COMPILER": "clang-cl.exe"
+        }
+      },
+      {
+        "name": "x64-debug-mingw",
+        "displayName": "x64 Debug MinGW",
+        "description": "Target Windows (64-bit) with the Minimal GNU for Windows toolset. (Debug)",
+        "inherits": "windows-mingw",
+        "architecture": {
+          "value": "x64",
+          "strategy": "external"
+        },
+        "cacheVariables": {
+          "CMAKE_BUILD_TYPE": "Debug",
+          "RELEASE_TYPE": "x64_debug_MinGW"
+        }
+      },
+      {
+        "name": "x64-release-mingw",
+        "displayName": "x64 Release MinGW",
+        "description": "Target Windows (64-bit) with the Minimal GNU for Windows toolset. (RelWithDebInfo)",
+        "inherits": "x64-debug-mingw",
+        "cacheVariables": {
+          "CMAKE_BUILD_TYPE": "Release",
+          "RELEASE_TYPE": "x64_MinGW"
+        }
+      },
+      {
+        "name": "x86-debug-mingw",
+        "displayName": "x86 Debug MinGW",
+        "description": "Target Windows (32-bit) with the Minimal GNU for Windows toolset. (Debug)",
+        "inherits": "windows-mingw",
+        "architecture": {
+          "value": "x86",
+          "strategy": "external"
+        },
+        "cacheVariables": {
+          "CMAKE_BUILD_TYPE": "Debug",
+          "RELEASE_TYPE": "x86-debug_MinGW"
+        }
+      },
+      {
+        "name": "x86-release-mingw",
+        "displayName": "x86 Release MinGW",
+        "description": "Target Windows (32-bit) with the Minimal GNU for Windows toolset. (RelWithDebInfo)",
+        "inherits": "x86-debug-mingw",
+        "cacheVariables": {
+          "CMAKE_BUILD_TYPE": "Release",
+          "RELEASE_TYPE": "x86_MinGW"
+        }
+      },
+      {
+        "name": "x64-debug-clang-mingw",
+        "displayName": "x64 Debug Clang (MinGW)",
+        "inherits": "x64-debug-mingw",
+        "cacheVariables": {
+          "CMAKE_C_COMPILER": "clang.exe"
+        }
+      },
+      {
+        "name": "x64-release-clang-mingw",
+        "displayName": "x64 Release Clang (MinGW)",
+        "inherits": "x64-release-mingw",
+        "cacheVariables": {
+          "CMAKE_C_COMPILER": "clang.exe"
+        }
+      },
+      {
+        "name": "x86-debug-clang-mingw",
+        "displayName": "x86 Debug Clang (MinGW)",
+        "inherits": "x86-debug-mingw",
+        "cacheVariables": {
+          "CMAKE_C_COMPILER": "clang.exe"
+        }
+      },
+      {
+        "name": "x86-release-clang-mingw",
+        "displayName": "x86 Release Clang (MinGW)",
+        "inherits": "x86-release-mingw",
+        "cacheVariables": {
+          "CMAKE_C_COMPILER": "clang.exe"
+        }
+      },
+      {
+        "name": "x64-debug-gcc",
+        "displayName": "x64 Debug GCC",
+        "inherits": "linux",
+        "architecture": {
+          "value": "x64",
+          "strategy": "external"
+        },
+        "cacheVariables": {
+          "CMAKE_BUILD_TYPE": "Debug",
+          "RELEASE_TYPE": "x64_debug"
+        }
+      }
+    ]
+  }
