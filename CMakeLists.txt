@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.0)
+project(app LANGUAGES C VERSION 1.0.0)
+
+set(CMAKE_C_STANDARD 90)
+
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
+add_executable(${PROJECT_NAME}-${PROJECT_VERSION}-${CMAKE_C_PLATFORM_ID}_${RELEASE_TYPE} src/main.c)

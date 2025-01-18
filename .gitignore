@@ -1,0 +1,6 @@
+out/
+external/
+
+.idea/
+.vs/
+.vscode/
