@@ -7,5 +7,7 @@
     ],
     "C_Cpp.inlayHints.parameterNames.suppressWhenArgumentContainsName": true,
     "C_Cpp.inlayHints.parameterNames.hideLeadingUnderscores": true,
-    "C_Cpp.formatting": "clangFormat"
+    "C_Cpp.formatting": "clangFormat",
+    "C_Cpp.inlayHints.parameterNames.enabled": true,
+    "C_Cpp.autocompleteAddParentheses": true
 }
