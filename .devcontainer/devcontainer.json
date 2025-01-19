@@ -5,10 +5,8 @@
 	},
   "customizations": {
     "vscode": {
-      "extensions": [
-        "ms-vscode.cpptools-extension-pack",
-        "llvm-vs-code-extensions.vscode-clangd",
-        "cs128.cs128-clang-tidy"
+      "recommendations": [
+        "ms-vscode.cpptools-extension-pack"
       ]
     }
   }

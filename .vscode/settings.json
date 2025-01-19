@@ -1,8 +1,11 @@
 {
-    "C_Cpp.intelliSenseEngine": "disabled",
+    "C_Cpp.intelliSenseEngine": "default",
     "cmake.copyCompileCommands": "${workspaceFolder}/build/compile_commands.json",
-    "clangd.arguments": [
-        "--compile-commands-dir=${workspaceFolder}/build"
+    "C_Cpp.codeAnalysis.clangTidy.enabled": true,
+    "C_Cpp.codeAnalysis.clangTidy.args": [
+        "-allow-enabling-analyzer-alpha-checkers"
     ],
-    "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+    "C_Cpp.inlayHints.parameterNames.suppressWhenArgumentContainsName": true,
+    "C_Cpp.inlayHints.parameterNames.hideLeadingUnderscores": true,
+    "C_Cpp.formatting": "clangFormat"
 }

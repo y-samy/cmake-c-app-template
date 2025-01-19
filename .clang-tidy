@@ -1,6 +1,7 @@
 # Generated from CLion Inspection settings
 ---
 Checks: '-*,
+clang-analyzer-alpha.deadcode.UnreachableCode,
 bugprone-argument-comment,
 bugprone-assert-side-effect,
 bugprone-bad-signal-to-kill-thread,
