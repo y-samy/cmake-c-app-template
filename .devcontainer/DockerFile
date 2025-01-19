@@ -1,8 +1,10 @@
 FROM mcr.microsoft.com/devcontainers/cpp:1-ubuntu-24.04
 
+RUN wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
+
 RUN apt-get update && apt-get install -y --no-install-recommends\
-    gcc g++ clang\
-    cppcheck valgrind clangd ccache\
+    gcc g++\
+    cppcheck valgrind ccache\
     cmake ninja-build\
-    lsb-release zlib1g-dev\
+    clang-format clang-tidy clang-tools clang clangd libc++-dev libc++1 libc++abi-dev libc++abi1 libclang-dev libclang1 liblldb-dev libllvm-ocaml-dev libomp-dev libomp5 lld lldb llvm-dev llvm-runtime llvm python3-clang\
     wget git
