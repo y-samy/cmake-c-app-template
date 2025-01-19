@@ -1,7 +1,7 @@
 {
 	"name": "Template",
 	"build": {
-		"dockerfile": "Dockerfile"
+		"dockerfile": "DockerFile"
 	},
   "customizations": {
     "vscode": {
